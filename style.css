@@ -1,0 +1,23 @@
+@import url(https://db.onlinewebfonts.com/c/47d5fd8c3738de46ef0b3fe3f68c289a?family=Perfect+DOS+VGA+437);
+body {
+    background-color: rgb(14, 14, 105);
+    color: yellow;
+    font-family: "Perfect DOS VGA 437";
+}
+h1 {
+    color: white;
+}
+li{
+    list-style: none;
+    margin-top: 12px;
+}
+a{
+    text-decoration: none;
+    color: yellow;
+}
+/* a:visited {
+    color: red;
+} */
+a:hover {
+    color:white;
+}
