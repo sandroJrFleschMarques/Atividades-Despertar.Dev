@@ -21,3 +21,23 @@ a{
 a:hover {
     color:white;
 }
+@media (max-width: 880px){
+    ul {
+        padding-left: 0;
+    }
+    h1{
+        font-size: 18px;
+    }
+    h1 span{
+        display: block;
+        padding-top:20px;
+
+    }
+    a {
+        font-size: 5px;
+
+    }
+    li {
+        margin-top: 20px;
+    }
+}
