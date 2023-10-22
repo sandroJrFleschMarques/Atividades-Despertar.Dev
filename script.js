@@ -1,4 +1,4 @@
-$(document).on('keyup', function (e) {
+$(document).on('keydown', function (e) {
 
     // ATRIBUINDO O KEY CODE PARA AS VARIAVEIS PARA MELHOR LEGIBILIDADE
 
