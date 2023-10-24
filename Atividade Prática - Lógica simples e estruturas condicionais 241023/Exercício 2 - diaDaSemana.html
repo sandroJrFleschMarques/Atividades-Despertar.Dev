@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <script>
+        /*2. Crie um programa que peça um número de 1 a 7 e exiba o dia da
+semana correspondente utilizando a estrutura condicional switch.*/
+        let numero = prompt('Digite o número do dia da semana')
+        switch (numero) {
+            case '1':
+                numero = 'Domingo'
+                break
+            case '2':
+                numero = 'Segunda-Feira'
+                break
+            case '3':
+                numero = 'Terça-Feira'
+                break
+            case '4':
+                numero = 'Quarta-Feira'
+                break
+            case '5':
+                numero = 'Quinta-Feira'
+                break
+            case '6':
+                numero = 'Sexta-Feira'
+                break
+            case '7':
+                numero = 'Sábado'
+                break
+            default:
+                numero = 'Número inválido'
+                break
+        }
+        alert(numero)
+        window.location.reload()
+    </script>
+
+</body>
+
+</html>
