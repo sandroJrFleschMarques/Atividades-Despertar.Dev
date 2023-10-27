@@ -27,7 +27,8 @@ da taxa do saque não pode ser maior que o saldo disponível. */
         let saldo = parseFloat(prompt('Digite o saldo.'))
         let retirada = parseFloat(prompt('Digite o valor do saque. Taxa: R$ 4,50'))
 
-        if (retirada < saldo && retirada % 5 === 0) {
+        if (retirada + 4.50 < saldo && retirada % 5 === 0 ) {
+            
             saldo = saldo - (retirada + 4.50)
             status3 = 'Saque realizado com sucesso. Descontado a taxa de saque de R$ 4,50!'
 
