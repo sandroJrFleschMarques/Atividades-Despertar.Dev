@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <script>
+        // 3. Escreva um algoritmo que faça a tabuada de um número e
+        // apresente o resultado de acordo com o modelo a seguir, sabendo
+        // que o multiplicando deverá ser fornecido pelo usuário (n) e a
+        // quantidade de iterações também (i).
+        // 1 * 2 = 2
+        // 2 * 2 = 4
+        // 3 * 2 = 6
+        // ...
+
+        let m = Number(prompt('Qual número deseja saber a tabuada'))
+        let qI = Number(prompt('Até quanto?'))
+
+        for (let i = 1; i <= qI; i++) {
+            document.write(`${i} * ${m} = ${i * m}<br>`)
+        }
+    </script>
+</body>
+
+</html>

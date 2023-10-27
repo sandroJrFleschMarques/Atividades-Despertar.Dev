@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <script>
+        // 1. Desenvolva um algoritmo que leia a altura de 15 pessoas. Este
+        // programa deverá calcular e mostrar:
+        // a. A menor altura do grupo;
+        // b. A maior altura do grupo;
+
+        let dado = Number(prompt(`Pessoa 1 Digite a altura`))
+        let menor = dado
+        let maior = dado
+        for (let i = 2; i <= 15; i++) {
+            dado = Number(prompt(`Pessoa ${i} Digite a altura`))
+            if (dado > maior) {
+                maior = dado
+            }
+            if (dado < menor) {
+                menor = dado
+            }
+        }
+        document.write('Menor altura: ' + menor + '<br>')
+        document.write('Maior altura: ' + maior)
+
+    </script>
+</body>
+
+</html>
