@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <script>
+        //         3. Crie um algoritmo que leia o valor inicial da contagem, o valor final e
+        // o incremento, mostrando em seguida todos os valores no intervalo:
+        // Ex:
+        // Digite o primeiro Valor: 3
+        // Digite o último Valor: 10
+        // Digite o incremento: 2
+        // Contagem: 3 5 7 9 Acabou!
+        let vi = Number(prompt('****CONTAGEM****\nValor inicial da contagem:'))
+        let vf = Number(prompt('Valor final da contagem:'))
+        let inc = Number(prompt('Incremento:'))
+        if (vi >= 0 && !isNaN(vi) && vf > 0 && !isNaN(vf) && inc > 0 && !isNaN(inc)) {
+            for (i = vi; i < vf; i += inc) {
+                document.write(`${i} `)
+            }
+        } else {
+            alert('Erro')
+            location.reload()
+        }
+    </script>
+</body>
+
+</html>

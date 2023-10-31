@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         4. Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar
+        // descontos para todos, mas especialmente para mulheres. Faça um
+        // programa que leia nome, sexo e o valor das compras do cliente e
+        // calcule o preço com desconto. Sabendo que:
+        // a. Homens ganham 5% de desconto
+
+        // b. Mulheres ganham 13% de desconto
+        let nome = ''
+        let genero = ''
+        let valorCompra = ''
+        nome = prompt('*****PROMOÇÃO DIA DA MULHER*****\nDESCONTO 13% PARA MULHERES E 5% PARA HOMENS\nDigite seu nome para verificar o seu desconto:')
+        genero = prompt('Digite F para feminino e M para Masculino:').toUpperCase()
+        valorCompra = Number(prompt("Digite valor da compra:"))
+        if (valorCompra >= 0 && !isNaN(valorCompra)) {
+            if (genero === 'F') {
+                valorCompra2 = valorCompra * 0.87
+                desconto = '13%'
+            } else if (genero === 'M') {
+                valorCompra2 = valorCompra * 0.95
+                desconto = '5%'
+            } else {
+                alert('Erro')
+                location.reload()
+            }
+        } else {
+            alert('Erro')
+            location.reload()
+        }
+        document.write(`${nome}, você ganhou ${desconto} de desconto e sua compra que seria de R$${valorCompra.toFixed(2).replace('.', ',')} saiu por R$${valorCompra2.toFixed(2).replace('.', ',')}`)
+    </script>
+</body>
+
+</html>

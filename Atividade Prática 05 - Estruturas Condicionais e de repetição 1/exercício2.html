@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <script>
+        //         2. Desenvolva um aplicativo que leia o salário e o sexo de vários
+        // funcionários. No final, mostre o total de salários pagos aos homens e
+        // o total pago às mulheres. O programa vai perguntar ao usuário se
+        // ele quer continuar ou não sempre que ler os dados de um
+        // funcionário.
+        let salHomens = 0
+        let salMulheres = 0
+        seguir = true
+
+        while (seguir) {
+            salario = Number(prompt('*****MÉDIA SALARIAL POR GÊNERO*****\nDigite o salário'))
+            sexo = prompt('Digite o sexo M ou F:')
+            if (salario >= 0 && !isNaN(salario)) {
+                if (salario < 1 || sexo === null || sexo === '') {
+                    alert('Erro')
+                    location.reload()
+                    break
+                }
+                else if (sexo != null) {
+                    if (sexo.toUpperCase() === 'M') {
+                        salHomens += salario
+                    } else if (sexo.toUpperCase() === 'F') {
+                        salMulheres += salario
+                    } else {
+                        alert('Erro')
+                        location.reload()
+                        break
+                    }
+                }
+            } else {
+                alert('Erro')
+                location.reload()
+                break
+            }
+            seguir = confirm('Deseja registrar nova pessoa?')
+        }
+        document.write(`Total de salário pago aos homens: R$${salHomens.toFixed(2).replace('.', ',')}`)
+        document.write(`<br> Total de salário pago as mulheres: R$${salMulheres.toFixed(2).replace('.', ',')}`)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    <script>
+        //         5. Faça um algoritmo que pergunte a distância que um passageiro
+        // deseja percorrer em Km. Calcule o preço da passagem, cobrando
+        // R$0.50 por Km para viagens até 200Km e R$0.45 para viagens mais
+        // longas.
+        let dist = Number(prompt('*****CÁLCULO DA PASSAGEM*****\nQual a distância em Km que você deseja percorrer?'))
+        let passagem = 0
+        if (dist > 0 && !isNaN(dist)) {
+            if (dist <= 200) {
+                passagem = dist * 0.5
+            } else {
+                passagem = dist * 0.45
+            }
+        } else {
+            alert('Erro')
+            location.reload()
+        }
+        document.write(`Você definiu a distância de ${dist}km e o custo será de ${passagem.toFixed(2).replace('.', ',')}`)
+    </script>
+</body>
+
+</html>

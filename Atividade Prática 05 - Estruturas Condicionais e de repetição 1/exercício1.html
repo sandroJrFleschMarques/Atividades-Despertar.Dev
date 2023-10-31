@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <script>
+        //         1. Faça um algoritmo que leia a idade de vários alunos de uma turma.
+        // O programa vai parar quando for digitada a idade 999. No final,
+        // mostre quantos alunos existem na turma e qual é a média de idade
+        // do grupo.
+        let idade = 0
+        let i = 0
+        let soma = 0
+        let media = 0
+        let seguir = true
+
+        while (idade !== 999) {
+            if (idade >= 0 && !isNaN(idade) && Number.isInteger(idade)) {
+                idade = Number(prompt(`*****CALCULO DE MÉDIA DE IDADES*****\nDigite a idade do aluno ${i + 1}:\n\nP/ CALCULAR DIGITE 999`))
+                console.log(idade, i)
+                if (idade !== 999) {
+                    soma += idade
+                    i++
+                    if (idade === 0) {
+                        alert('Caractere invalido. A página será reiniciada')
+                        seguir = false
+                        break
+                    }
+                } else if (i < 2) {
+                    alert('Digite pelo menos 2 idades para calcular a média. A página será reiniciada')
+                    seguir = false
+                }
+
+            } else {
+                alert('Caractere invalido. A página será reiniciada')
+                seguir = false
+                break
+            }
+        }
+        if (seguir) {
+            media = soma / i
+            alert(`Número de alunos na turma: ${i}\n Media de idade do grupo: ${media.toFixed(1)}`)
+            let sair = confirm('Digite OK para reiniciar ou CANCELAR para voltar:')
+            if (sair) {
+                window.location.reload()
+            } else {
+                window.history.back()
+            }
+        } else {
+
+            window.location.reload()
+        }
+
+
+    </script>
+</body>
+
+</html>
