@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         18. Uma loja de eletrodomésticos estabeleceu as seguintes
+        // modalidades de pagamento para a venda de suas mercadorias:
+
+        // Escreva um algoritmo que armazene o preço de tabela e o número
+        // de vezes em que o pagamento será feito. Calcule o valor de cada
+        // parcela e o preço total da compra e imprima no console.
+        let preco = Number(prompt('Digite o valor da compra'))
+        let parcelas = Number(prompt('Digite o número de parcelas'))
+        if (preco > 0 && !isNaN(preco, parcelas) && Number.isInteger(parcelas)) {
+            if (parcelas === 1) {
+                preco -= preco * 0.025
+            } else if (parcelas >= 6 && parcelas <= 10) {
+                preco += preco * 0.06
+            } else if (parcelas >= 11 && parcelas <= 15) {
+                preco += preco * 0.13
+            } else if (parcelas < 1 || parcelas > 15) {
+                alert('Nossa loja trabalha com parcelas de 1 a 15X')
+                location.reload()
+            }
+        } else {
+            alert('Numero inválido')
+            location.reload()
+
+        }
+        let valorParcela = preco / parcelas
+        document.write(`Numero de parcelas : ${parcelas}<br> Valor da parcela: R$ ${valorParcela.toFixed(2).replace('.', ',')} <br>Valor da compra: R$ ${preco.toFixed(2).replace('.', ',')}`)
+    </script>
+</body>
+
+</html>

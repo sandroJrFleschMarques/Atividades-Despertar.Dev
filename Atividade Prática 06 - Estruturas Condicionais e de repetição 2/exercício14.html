@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+
+<body>
+    <script>
+        //         14. Leia um número, utilizando WHILE multiplique este número por 3
+        // enquanto a soma seja menor que 500 e no final mostre qual o
+        // último valor
+
+        let numero = Number(prompt('Digite um número para multiplicar por 3 até que a multiplicação seja menor do que 500: '))
+        let soma = numero
+        while (soma*3 < 500) {
+            soma= numero *=3
+        }
+        document.write(soma)
+    </script>
+</body>
+
+</html>
