@@ -72,4 +72,4 @@ console.log(lista)
 for (let item of lista) {
     lista2.unshift(item)
 }
-document.write(`Exercício 5: Lista: [${lista}], Lista Invesa: [${lista2}]`)
+document.write(`Exercício 5: Lista: [${lista}], Lista Inversa: [${lista2}]`)
