@@ -26,21 +26,25 @@ document.write(`Exercício 2: Maior item do array [${valores}]: ${maior}<br><br>
 // Crie um array chamado primos contendo 10 números inteiros que são primos.
 // Escreva um programa que percorra o array e verifique se os números são realmente primos.
 // Exiba no console a lista de números primos validados.
-let primos = [2, 3, 4, 7, 11, 13, 17, 19, 23, 29]
-document.write(`Exercício 3: Verificar se os números do array [${primos}] são primos<br>`)
+let primos = [2, 3, 4, 5, 7, 11, 13, 17, 19, 23, 29]
+document.write(`Exercício 3: Verificar se os números do array [${primos}] são primos:<br><br>`)
 for (let primo of primos) {
-
     for (i = 2; i < primo; i++) {
+
         if (primo % i === 0) {
             document.write(`O número ${primo} não é primo<br>`)
             break
+
         } else {
             document.write(`O número ${primo} é primo<br>`)
             break
         }
+    } if (primo === 2) {
+        document.write(`O número ${primo} é primo<br>`)
     }
     document.write('<br>')
 }
+
 // Exercício 4
 // Crie um array chamado intervalo contendo 20 números inteiros de 1 a 20 (inclusive).
 // Escreva um programa que calcule a soma dos valores entre o 5º e o 15º elemento do array.
