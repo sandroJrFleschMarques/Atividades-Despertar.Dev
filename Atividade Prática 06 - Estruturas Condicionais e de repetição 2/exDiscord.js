@@ -9,7 +9,7 @@ for (let numero of numeros) {
         somaPar += numero
     }
 }
-document.write(`Exercício 1: Soma dos numeros pares do array [${numeros}]: ${somaPar}<br><br>`)
+document.write(`Exercício 1: Soma dos números pares do array [${numeros}]: ${somaPar}<br><br>`)
 // Exercício 2
 // Crie um array chamado valores contendo 8 números inteiros de sua escolha.
 // Escreva um programa que encontre o maior valor no array.
