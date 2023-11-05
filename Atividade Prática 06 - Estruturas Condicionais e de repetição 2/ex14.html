@@ -14,17 +14,15 @@
         // enquanto a soma seja menor que 500 e no final mostre qual o
         // último valor
 
-        let numero = Number(prompt('Digite um número para multiplicar por 3 até que a multiplicação seja menor do que 500: '))
-        let soma = numero
-        if (numero > 0 && !isNaN(numero) && numero < 167) {
-            while (soma * 3 < 500) {
-                soma = numero *= 3
-            }
-        } else {
-            alert('Caractere inválido!')
-            location.reload()
+        let numero = 0
+        do {
+            numero = Number(prompt('Digite um número para multiplicar por 3 até que a multiplicação seja menor do que 500: '))
+        } while (numero < 1 || isNaN(numero) || (numero * 3) > 500)
+
+        while (numero * 3 < 500) {
+            numero *= 3
         }
-        document.write(soma)
+        document.write(numero)
     </script>
 </body>
 
