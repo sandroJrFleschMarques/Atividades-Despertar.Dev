@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Function</title>
+</head>
+<style>
+    body {
+        background: radial-gradient(circle, rgba(172, 228, 217, 1) 0%, rgba(36, 98, 133, 1) 98%, rgba(18, 56, 111, 1) 100%);
+        font-size: 2rem
+    }
+
+    div {
+        width: 100%;
+        height: 70px;
+    }
+
+    button {
+        width: 120px;
+        height: 70px;
+        float: left;
+    }
+
+    p {
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <div>
+        <button onclick="tornarVerdadeiro(),adicionarLivro()">Adicionar Livro</button>
+        <button onclick="exibirInfo()">Exibir Livros</button>
+        <button onclick="excluir()">Excluir</button>
+        <button onclick='marcarLidos()'>Lidos</button>
+        <button onclick="atualizarBiblioteca()">Biblioteca Atualizada</button>
+    </div>
+
+    <p id="info"></p>
+    <script src="functionBiblioteca.js"></script>
+</body>
+
+</html>
