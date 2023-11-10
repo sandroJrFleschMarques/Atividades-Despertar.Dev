@@ -26,7 +26,7 @@ alert(`EXERCÍCIO 2: O NÚMERO ${dado1} É ÍMPAR: ${verificarImpar(dado1)}`)
 // 3. Crie uma função que recebe por parâmetro um valor inteiro e
 // positivo e retorne verdadeiro se o número for primo ou falso se não
 // for.
-const dado2 = 5
+const dado2 = 7
 function verificarPrimo (numero) {
     if (numero<=1) return false
     if (numero===2) return true
@@ -35,7 +35,7 @@ function verificarPrimo (numero) {
     }
     return true
 }
-alert(`EXERCÍCIO 3: O NÚMERO ${dado2} é primo = ${verificarPrimo(5)}`);
+alert(`EXERCÍCIO 3: O NÚMERO ${dado2} é primo = ${verificarPrimo(dado2)}`);
 // 4. Crie uma função que recebe por parâmetro o tempo de duração de
 // uma fábrica expressa em segundos e retorna esse tempo em horas,
 // minutos e segundos.
