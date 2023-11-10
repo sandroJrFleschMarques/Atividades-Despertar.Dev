@@ -60,9 +60,9 @@ alert(`EXERCÍCIO 3: O NÚMERO ${dado2} é primo = ${verificarPrimo(5)}`);
 
 const dado3 = 3672
 function timeConverter(sec) {
-    const hours = (sec / 3600)
+    const hours = sec / 3600
     sec %= 3600
-    const minutes = (sec % 3600) / 60
+    const minutes = sec / 60
     sec %= 60
     return `${Math.floor(hours)}:${Math.floor(minutes)}:${Math.floor(sec)}`
 }
