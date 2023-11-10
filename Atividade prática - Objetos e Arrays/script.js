@@ -59,8 +59,8 @@ document.write(`c.[${rainbow}]<br><br>`)
 // Pessoas empregadas com salários maiores que 2500:
 // Nome: Alessandro, Idade: 28, Salário: 2700
 // Nome: Alessandro, Idade: 28, Salário: 3000
-document.write(`EXERCÍCIO 3: "Usando Filter"<br>`)
-alert('Digite os dados para o Exercício 3: "Usando Filter"\nNome-Idade-Trabalhando-Salário')
+document.write(`EXERCÍCIO 3: "Usando Filter e Function"<br>`)
+alert('Digite os dados para o Exercício 3: "Usando Filter e Function"\nNome-Idade-Trabalhando-Salário')
 const pessoas = []
 let continuar = true
 while (continuar) {
@@ -88,12 +88,6 @@ while (continuar) {
     }
     continuar = confirm('Adicionar mais pessoas?')
 }
-let front1 = 'Nenhum<br>'
-let front2 = 'Nenhum<br>'
-let front3 = 'Nenhum<br>'
-let p1 = ''
-let p2 = ''
-let p3 = ''
 const desempregados = pessoas.filter(function (pessoa) {
     return pessoa.trabalhando === false
 })
@@ -103,10 +97,18 @@ const menor2500 = pessoas.filter(function (pessoa) {
 const maior2500 = pessoas.filter(function (pessoa) {
     return pessoa.salario > 2500
 })
-if (desempregados.length > 0) { for (let des of desempregados) { p1 += `Nome: ${des.nome}, Idade: ${des.idade}<br>` } front1 = p1 }
-if (menor2500.length > 0) { for (let menor of menor2500) { p2 += `Nome: ${menor.nome}, Idade: ${menor.idade}, Salário: ${menor.salario}<br>` } front2 = p2 }
-if (maior2500.length > 0) { for (let maior of maior2500) { p3 += `Nome: ${maior.nome}, Idade: ${maior.idade}, Salário: ${maior.salario}<br>` } front3 = p3 }
 
-document.write('Pessoas desempregadas:<br>' + front1 + '<br>')
-document.write('Pessoas empregadas com salários menores que R$ 2500,00:<br>' + front2 + '<br>')
-document.write('Pessoas empregadas com salários maiores que R$ 2500,00:<br>' + front3 + '<br>')
+function iterar(arrayDoFilter) {
+    if (arrayDoFilter.length === 0) return 'Nenhuma<br>'
+    let front = ''
+    for (let indice of arrayDoFilter) {
+        for (let chave in indice) {
+            if (typeof indice[chave] != 'boolean') front += (chave + ': ' + indice[chave] + ' ')
+        }
+        front += '<br>'
+    }
+    return front
+}
+document.write('Pessoas desempregadas:<br>' + iterar(desempregados) + '<br>')
+document.write('Pessoas empregadas com salários menores que R$ 2500,00:<br>' + iterar(menor2500) + '<br>')
+document.write('Pessoas empregadas com salários maiores que R$ 2500,00:<br>' + iterar(maior2500) + '<br>')
