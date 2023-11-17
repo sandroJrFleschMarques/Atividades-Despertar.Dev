@@ -64,7 +64,7 @@ const veiculos = [
         preço: 30000
     },
     {
-        id: '78',
+        id: '79',
         modelo: 'ka',
         marca: 'ford',
         ano: 2020,
@@ -89,7 +89,7 @@ const cadastrarVeiculo = () => {
         const marca = prompt('marca').toLowerCase()
         const ano = prompt('ano').toLowerCase()
         const cor = prompt('cor').toLowerCase()
-        const preço = prompt('preço').toLowerCase()
+        const preço = Number(prompt('preço'))
         continuar = confirm('continuar?')
         const veiculo = {
             id,
@@ -239,7 +239,7 @@ const extraMediaPreço = () => {
     const carros = veiculos.map(vei => {
         soma += vei.preço
     })
-    document.getElementById('front').innerHTML = (`A média de preço de todos os carros é ${soma / carros.length}`)
+    document.getElementById('front').innerHTML = (`A média de preço de todos os carros é ${(soma / carros.length).toFixed(2)}`)
 
 
 }
