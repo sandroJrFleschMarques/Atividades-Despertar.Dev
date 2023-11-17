@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática - CRUD de carros</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(./revenda-de-carros.jpg.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        #front {
+            display: inline-block;
+            background-color: white;
+            width: 90%;
+            height: 300px;
+            margin: 12% 5%;
+            background-color: rgb(238, 236, 236);
+            font-size: 1.5em;
+            overflow: auto;
+        }
+
+        button {
+            width: 70px;
+            height: 50px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="opcoes()">MENU</button>
+    <button onclick="extraPreço()">FILTRAR VALOR</button>
+    <button onclick="extraMaior()">MAIOR VALOR</button>
+    <button onclick="extraMarcas()">AGRUPAR POR MARCA</button>
+    <button onclick="extraMediaPreço()">MEDIA</button>
+    <button onclick="extraOrdemAlfabetica()">ORDEM A-Z</button>
+    <button onclick="extraContagemCor()">CONTAR COR</button>
+    <button onclick="extraBusca()">BUSCA</button>
+    <p id="front"></p>
+    <script src="./script.js"></script>
+</body>
+
+</html>
