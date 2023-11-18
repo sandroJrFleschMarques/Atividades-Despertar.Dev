@@ -2,10 +2,32 @@ const dataCenter = []
 let referencia = -1
 const modal = document.querySelector('.modal')
 const front = document.querySelector('#front')
+let seguir = false
 const criarUsuario = () => {
     const novoUsuario = prompt('e-mail')
     const novaSenha = prompt('senha')
-    if (novoUsuario && novaSenha) {
+    if (novoUsuario.includes('@') && novaSenha) {
+        if (dataCenter.length == 0) {
+            seguir = true
+        } else {
+
+            dataCenter.forEach(indice => {
+                if (novoUsuario === indice.novoUsuario) {
+                    alert('O usuário já existe')
+                    throw new Error('O usuário já existe')
+                } else {
+                    seguir = true
+                }
+            })
+        }
+    } else if (!novoUsuario.includes('@')) {
+        alert('Digite um e-mail valido pessoa@email')
+        return
+    } else {
+        alert('Digite uma senha válida')
+        return
+    }
+    if (seguir) {
         const mov = []
         let objeto = {
             novoUsuario,
@@ -14,8 +36,6 @@ const criarUsuario = () => {
         }
         dataCenter.push(objeto)
         console.log(dataCenter);
-    } else {
-        alert('Dados inválidos')
     }
 }
 const login = () => {
