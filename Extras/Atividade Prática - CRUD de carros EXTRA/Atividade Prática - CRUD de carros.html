@@ -16,7 +16,6 @@
             background-image: url(./revenda-de-carros.jpg.webp);
             background-repeat: no-repeat;
             background-size: cover;
-
         }
 
         #front {
@@ -24,7 +23,7 @@
             background-color: white;
             width: 90%;
             height: 300px;
-            margin: 12% 5%;
+            margin: 11% 5%;
             background-color: rgb(238, 236, 236);
             font-size: 1.5em;
             overflow: auto;
@@ -34,11 +33,59 @@
             width: 70px;
             height: 50px;
             float: left;
+            cursor: pointer;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        #user {
+            width: 200px;
+            float: left;
+        }
+
+        input,
+        span,
+        #bl {
+            width: 70px;
+            height: 30px;
+            float: left;
+
+        }
+
+        span {
+            text-align: right;
+
+        }
+
+        #modal {
+            background-color: darkgrey;
+            width: 70%;
+            height: 100px;
+            position: absolute;
+            top: 40%;
+            left: 15%;
+        }
+
+        .modal {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            position: absolute;
+            top: 0;
+            display: none;
+        }
+
+        a:hover {
+            color: rgb(12, 12, 155);
         }
     </style>
 </head>
 
 <body>
+    <div id="user"></div>
+    <button onclick="trocarUsuario()">TROCAR USUARIO</button>
     <button onclick="opcoes()">MENU</button>
     <button onclick="extraPreço()">FILTRAR VALOR</button>
     <button onclick="extraMaior()">MAIOR VALOR</button>
@@ -48,6 +95,16 @@
     <button onclick="extraContagemCor()">CONTAR COR</button>
     <button onclick="extraBusca()">BUSCA</button>
     <p id="front"></p>
+    <div class="modal">
+        <div id="modal">
+            <span>Usuario:</span>
+            <input id="usuario" type="text">
+            <span>Senha:</span>
+            <input id="senha" type="text">
+            <button id="bl" onclick="login()">Entrar</button>
+            <a onclick="criarUsuario()">Novo aqui? Criar uma conta</a>
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 
