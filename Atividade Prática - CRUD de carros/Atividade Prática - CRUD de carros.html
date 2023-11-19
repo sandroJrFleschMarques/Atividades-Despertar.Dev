@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade Prática - CRUD de carros</title>
     <style>
-        * { box-sizing: border-box;
-            margin: 0;
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
             padding: 0;
         }
 
@@ -15,34 +16,124 @@
             background-image: url(./revenda-de-carros.jpg.webp);
             background-repeat: no-repeat;
             background-size: cover;
-
+            height: 100vh;
         }
 
         #front {
-            display: inline-block;
-            background-color: white;
-            width: 90%;
+            width: 100%;
             height: 300px;
-            margin: 12% 5%;
-            background-color: rgb(238, 236, 236);
+            background-color: rgb(226, 228, 209);
             font-size: 1.5em;
             overflow: auto;
+            border-bottom: 1px solid;
         }
 
         button {
-            width: 70px;
-            height: 50px;
-            margin: 0 auto;
+            width: 33.33%;
+            height: 55px;
+            float: left;
+            cursor: pointer;
+        }
+
+        input,
+        #bl {
+            width: 100%;
+            height: 30px;
+            display: inline-block;
+            margin-bottom: 7px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        #modal {
+            background-color: darkgrey;
+            width: 50%;
+            height: 300px;
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            padding: 10px;
+        }
+
+        .modal {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
             position: absolute;
             top: 0;
-            left: 0
+            display: none;
+        }
+
+        a {
+            color: rgb(14, 14, 105);
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        #user {
+            width: 100%;
+            font-size: 1.8em;
+            color: white;
+            background-color: rgb(14, 14, 105);
+            margin: auto;
+            overflow: auto;
+        }
+
+        nav {
+            width: 100%;
+            display: block;
+            margin: 0;
+
         }
     </style>
 </head>
 
 <body>
-    <button onclick="opcoes()">MENU</button>
+    <div id="user"></div>
+    <nav>
+        <button onclick="opcoes()">MENU</button>
+        <button onclick="trocarUsuario()">TROCAR USUARIO</button>
+        <button onclick="extraPreço()">FILTRAR VALOR</button>
+        <button onclick="extraMaior()">MAIOR VALOR</button>
+        <button onclick="extraMarcas()">AGRUPAR POR MARCA</button>
+        <button onclick="extraMediaPreço()">MEDIA</button>
+        <button onclick="extraOrdemAlfabetica()">ORDEM A-Z</button>
+        <button onclick="extraContagemCor()">CONTAR COR</button>
+        <button onclick="extraBusca()">BUSCA</button>
+    </nav>
+
+
     <p id="front"></p>
+    <div class="modal">
+        <div id="modal">
+            <ul>
+                <li>
+                    <p>Usuario:</p>
+                </li>
+                <li>
+                    <input id="usuario" type="email">
+                </li>
+                <li>
+                    <p>Senha:</p>
+                </li>
+                <li>
+                    <input id="senha" type="text">
+                </li>
+                <li>
+                    <button id="bl" onclick="login()">Entrar</button>
+                </li>
+                <li>
+                    <a onclick="criarUsuario()">Novo aqui? Criar uma conta</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 
