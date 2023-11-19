@@ -1,5 +1,90 @@
-const dataCenter = []
-let referencia = -1
+const dataCenter = [
+    {
+        novoUsuario: "tes", novaSenha: "123", mov: [
+            {
+                id: '61',
+                modelo: 'Truck',
+                marca: 'Ford',
+                ano: 2021,
+                cor: 'White',
+                preço: 35000
+            },
+            {
+                id: '78',
+                modelo: 'SUV',
+                marca: 'Toyota',
+                ano: 2022,
+                cor: 'White',
+                preço: 20000
+            },
+            {
+                id: '2',
+                modelo: 'Truck',
+                marca: 'Honda',
+                ano: 2022,
+                cor: 'Blue',
+                preço: 35000
+            },
+            {
+                id: '17',
+                modelo: 'Hatchback',
+                marca: 'Toyota',
+                ano: 2022,
+                cor: 'Black',
+                preço: 30000
+            },
+            {
+                id: '27',
+                modelo: 'Truck',
+                marca: 'Ford',
+                ano: 2021,
+                cor: 'Red',
+                preço: 35000
+            },
+            {
+                id: '12',
+                modelo: 'Truck',
+                marca: 'Chevrolet',
+                ano: 2021,
+                cor: 'Black',
+                preço: 30000
+            },
+            {
+                id: '76',
+                modelo: 'Hatchback',
+                marca: 'Chevrolet',
+                ano: 2021,
+                cor: 'Blue',
+                preço: 25000
+            },
+            {
+                id: '58',
+                modelo: 'SUV',
+                marca: 'Ford',
+                ano: 2020,
+                cor: 'Red',
+                preço: 30000
+            },
+            {
+                id: '78',
+                modelo: 'Truck',
+                marca: 'Toyota',
+                ano: 2020,
+                cor: 'White',
+                preço: 20000
+            },
+            {
+                id: '41',
+                modelo: 'Hatchback',
+                marca: 'Ford',
+                ano: 2022,
+                cor: 'Black',
+                preço: 25000
+            }
+        ]
+    }
+]
+let referencia = 0
 const modal = document.querySelector('.modal')
 const front = document.querySelector('#front')
 let seguir = false
@@ -7,12 +92,12 @@ const criarUsuario = () => {
     const novoUsuario = prompt('e-mail')
     const novaSenha = prompt('senha')
     if (novoUsuario && novaSenha) {
-        if(!novoUsuario.includes('@')){
+        if (!novoUsuario.includes('@')) {
             alert('Digite um e-mail válido "pessoa@email.com"')
             return
-        }else if (dataCenter.length == 0) {
+        } else if (dataCenter.length == 0) {
             seguir = true
-        }else {
+        } else {
 
             dataCenter.forEach(indice => {
                 if (novoUsuario === indice.novoUsuario) {
@@ -202,16 +287,13 @@ const extraMaior = () => {
 }
 // Agrupar Carros por Marca: Escreva uma função que agrupe carros por marca e retorne um objeto cujas chaves são os nomes das marcas e os valores são arrays de carros dessa marca.
 const extraMarcas = () => {
-    let arrayDeCarros = []
     let obj = {}
-    for (let carro of dataCenter[referencia].mov) {
-        if (!arrayDeCarros.includes(carro.marca)) {
-            obj[carro.marca] = []
+    dataCenter[referencia].mov.map(i => {
+        if (obj[i.marca] === undefined) {
+            obj[i.marca] = []
         }
-    }
-    for (let carro of dataCenter[referencia].mov) {
-        obj[carro.marca].push(carro.modelo)
-    }
+        obj[i.marca].push(i.modelo);
+    })
     let info = ''
     for (let carro in obj) {
         info += `${carro}: ${obj[carro]} <br>`
