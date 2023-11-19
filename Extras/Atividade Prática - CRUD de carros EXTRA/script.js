@@ -6,10 +6,13 @@ let seguir = false
 const criarUsuario = () => {
     const novoUsuario = prompt('e-mail')
     const novaSenha = prompt('senha')
-    if (novoUsuario.includes('@') && novaSenha) {
-        if (dataCenter.length == 0) {
+    if (novoUsuario && novaSenha) {
+        if(!novoUsuario.includes('@')){
+            alert('Digite um e-mail válido "pessoa@email.com"')
+            return
+        }else if (dataCenter.length == 0) {
             seguir = true
-        } else {
+        }else {
 
             dataCenter.forEach(indice => {
                 if (novoUsuario === indice.novoUsuario) {
@@ -20,8 +23,8 @@ const criarUsuario = () => {
                 }
             })
         }
-    } else if (!novoUsuario.includes('@')) {
-        alert('Digite um e-mail valido pessoa@email')
+    } else if (!novoUsuario) {
+        alert('Digite um e-mail')
         return
     } else {
         alert('Digite uma senha válida')
@@ -46,7 +49,7 @@ const login = () => {
         dataCenter.forEach(indice => {
             if (emailValue == indice.novoUsuario && senhaValue == indice.novaSenha) {
                 referencia = dataCenter.indexOf(indice)
-                status1 = `USUARIO LOGADO ${indice.novoUsuario}`
+                status1 = `<b>USUARIO LOGADO ${indice.novoUsuario}</b>`
                 return
             }
         })
@@ -57,6 +60,7 @@ const login = () => {
     if (status1) {
         document.getElementById('user').innerHTML = status1
         modal.style.display = "none"
+        opcoes()
     } else {
         alert('Não encontrado')
     }
@@ -70,10 +74,10 @@ let continuar = true
 const cadastrarVeiculo = () => {
     while (continuar) {
         const id = Date.now()
-        const modelo = prompt('Digite o modelo').toLowerCase()
-        const marca = prompt('marca').toLowerCase()
-        const ano = prompt('ano').toLowerCase()
-        const cor = prompt('cor').toLowerCase()
+        const modelo = prompt('Digite o modelo').toUpperCase()
+        const marca = prompt('marca').toUpperCase()
+        const ano = prompt('ano').toUpperCase()
+        const cor = prompt('cor').toUpperCase()
         const preço = Number(prompt('preço'))
         continuar = confirm('continuar?')
         const veiculo = {
@@ -96,12 +100,11 @@ const listarVeiculo = () => {
     dataCenter[referencia].mov.forEach(veic => {
         document.getElementById('front').innerHTML += (`ID: ${veic.id} | Modelo: ${veic.modelo} | Marca: ${veic.marca} | Ano: ${veic.ano} | Cor: ${veic.cor} | Preço: ${veic.preço}<br>`);
     })
-
 }
 const filtrarVeiculo = () => {
     document.getElementById('front').innerHTML = ''
-    const marca = prompt('Qual a marca que deseja filtrar?')
-    document.getElementById('front').innerHTML += (`VEÍCULOS FILTRADOS POR ${marca.toUpperCase()}<br>`)
+    const marca = prompt('Qual a marca que deseja filtrar?').toUpperCase()
+    document.getElementById('front').innerHTML += (`VEÍCULOS FILTRADOS POR ${marca}<br>`)
     const filtrado = dataCenter[referencia].mov.filter(veiculo => veiculo.marca === marca)
     let filtrado2 = ''
     filtrado.sort(function (x, y) {
@@ -119,8 +122,8 @@ const atualizarVeiculo = () => {
     const id = prompt('Digite o ID do veículo que quer atualizar:')
     const indice = dataCenter[referencia].mov.findIndex(veic => id == veic.id)
     if (indice > -1) {
-        const novaCor = prompt('Nova cor:')
-        const novoPreço = prompt('Novo preço:')
+        const novaCor = prompt('Nova cor:').toUpperCase()
+        const novoPreço = Number(prompt('Novo preço:'))
         const info = {
             id,
             novaCor,
@@ -260,7 +263,7 @@ const extraBusca = () => {
     document.getElementById('front').innerHTML = ''
     let filtro = 0
     let n = 0
-    let buscaModelo = prompt("Digite uma busca: ").toLowerCase()
+    let buscaModelo = prompt("Digite uma busca: ").toUpperCase()
     document.getElementById('front').innerHTML += `RESULTADOS DA BUSCA POR "${buscaModelo.toUpperCase()}":<br>`
     filtro = dataCenter[referencia].mov.filter(x => {
         for (let indice in x) {
@@ -269,7 +272,6 @@ const extraBusca = () => {
                 document.getElementById('front').innerHTML += (`ID: ${x.id} | Modelo: ${x.modelo} | Marca: ${x.marca} | Ano: ${x.ano} | Cor: ${x.cor} | Preço: ${x.preço}<br>`);
             }
         }
-
     })
     document.getElementById('front').innerHTML += `<br>${n} ${n == 1 ? 'resultado encontrado' : 'resultados encontrados'}`
 }
