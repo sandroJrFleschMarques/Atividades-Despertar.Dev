@@ -1,85 +1,85 @@
 const dataCenter = [
     {
-        novoUsuario: "tes", novaSenha: "123", mov: [
+        novoUsuario: "teste", novaSenha: "123", mov: [
             {
                 id: '61',
-                modelo: 'Truck',
-                marca: 'Ford',
-                ano: 2021,
-                cor: 'White',
-                preço: 35000
+                modelo: 'ESCORT',
+                marca: 'FORD',
+                ano: 1987,
+                cor: 'BRANCO',
+                preço: 19000
             },
             {
                 id: '78',
-                modelo: 'SUV',
-                marca: 'Toyota',
-                ano: 2022,
-                cor: 'White',
-                preço: 20000
+                modelo: 'FUSCA',
+                marca: 'VW',
+                ano: 1970,
+                cor: 'BEGE',
+                preço: 9000
             },
             {
                 id: '2',
-                modelo: 'Truck',
-                marca: 'Honda',
-                ano: 2022,
-                cor: 'Blue',
-                preço: 35000
+                modelo: 'PASSAT',
+                marca: 'VW',
+                ano: 1989,
+                cor: 'VERMELHO',
+                preço: 29900
             },
             {
                 id: '17',
-                modelo: 'Hatchback',
-                marca: 'Toyota',
-                ano: 2022,
-                cor: 'Black',
+                modelo: 'KADETT',
+                marca: 'GM',
+                ano: 1993,
+                cor: 'PRETO',
                 preço: 30000
             },
             {
                 id: '27',
-                modelo: 'Truck',
-                marca: 'Ford',
-                ano: 2021,
-                cor: 'Red',
+                modelo: 'MONZA',
+                marca: 'GM',
+                ano: 1990,
+                cor: 'CINZA',
                 preço: 35000
             },
             {
                 id: '12',
-                modelo: 'Truck',
-                marca: 'Chevrolet',
-                ano: 2021,
-                cor: 'Black',
-                preço: 30000
+                modelo: 'GOL',
+                marca: 'VW',
+                ano: 1995,
+                cor: 'PRATA',
+                preço: 15000
             },
             {
                 id: '76',
-                modelo: 'Hatchback',
-                marca: 'Chevrolet',
-                ano: 2021,
-                cor: 'Blue',
-                preço: 25000
+                modelo: 'OPALA',
+                marca: 'GM',
+                ano: 1991,
+                cor: 'AZUL',
+                preço: 40000
             },
             {
                 id: '58',
-                modelo: 'SUV',
-                marca: 'Ford',
-                ano: 2020,
-                cor: 'Red',
-                preço: 30000
+                modelo: 'CORCEL',
+                marca: 'FORD',
+                ano: 1977,
+                cor: 'AMARELO',
+                preço: 11000
             },
             {
-                id: '78',
-                modelo: 'Truck',
-                marca: 'Toyota',
-                ano: 2020,
-                cor: 'White',
-                preço: 20000
+                id: '79',
+                modelo: 'CHEVETTE',
+                marca: 'GM',
+                ano: 1980,
+                cor: 'VERDE',
+                preço: 10000
             },
             {
                 id: '41',
-                modelo: 'Hatchback',
-                marca: 'Ford',
-                ano: 2022,
-                cor: 'Black',
-                preço: 25000
+                modelo: 'UNO',
+                marca: 'FIAT',
+                ano: 1998,
+                cor: 'BORDÔ',
+                preço: 12500
             }
         ]
     }
