@@ -169,10 +169,10 @@ const extraContagemCor = () => {
     for (let carro of dataCenter[referencia].mov) {
         if (!arrayDeCarros.includes(carro.cor)) {
             obj[carro.cor] = []
+            arrayDeCarros.push(carro.cor)
         }
-    }
-    for (let carro of dataCenter[referencia].mov) {
         obj[carro.cor].push(carro.modelo)
+        console.log(arrayDeCarros);
     }
     let info = ''
     for (let carro in obj) {
