@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background-image: url(./revenda-de-carros.jpg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#front {
+    width: 100%;
+    height: 70%;
+    background-color: rgb(226, 228, 209);
+    font-size: 1.5em;
+    overflow: auto;
+    border-bottom: 1px solid;
+}
+.front{
+    height: 67vh;
+}
+
+button {
+    width: 33.33%;
+    height: 9vh;
+    float: left;
+    cursor: pointer;
+}
+
+input,
+#bl {
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+li {
+    list-style-type: none;
+}
+
+#modal {
+    background-color: darkgrey;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+a {
+    color: rgb(14, 14, 105);
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+a:hover {
+    color: red;
+}
+
+#user {
+    width: 100%;
+    height: 6vh;
+    font-size: 1.8em;
+    color: white;
+    background-color: rgb(14, 14, 105);
+    margin: auto;
+    overflow: auto;
+}
+
+nav {
+    width: 100%;
+    height: 27vh;
+    display: block;
+}
