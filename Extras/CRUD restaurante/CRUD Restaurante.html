@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática - CRUD Restaurante</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #front {
+            height: 50vh;
+            background-color: rgb(226, 228, 209);
+            display: block;
+            font-size: 1.5em;
+        }
+
+        nav {
+            width: 100%;
+            height: 10vh;
+            background-color: black;
+
+        }
+
+        ul {
+            text-align: center;
+            padding-top: 3vh;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            color: white;
+            width: 20%;
+            float: left;
+            display: block;
+
+        }
+
+        a {
+            cursor: pointer;
+            height: 100%;
+            width: 20%;
+
+        }
+
+        a:hover {
+            color: yellow;
+        }
+
+        img {
+            width: 100%;
+            height: 40vh;
+            display: block;
+        }
+
+        @media (max-width: 750px) {
+            nav {
+                height: 30vh;
+                padding: 0;
+            }
+
+            li {
+                width: 100%;
+                height: 5vh;
+                font-size: 1.1em;
+            }
+
+            #front {
+                font-size: 1.1em;
+                height: 40vh;
+            }
+
+            img {
+                height: 30vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a onclick="continuar=true, cadastrarPrato()">Cadastro de Pratos</a></li>
+            <li><a onclick="listarPrato()">Listagem de Pratos</a></li>
+            <li><a onclick="buscarPrato()">Busca de Pratos</a></li>
+            <li><a onclick="atualizarPrato()">Atualização de Pratos</a></li>
+            <li><a onclick="excluirPrato()">Exclusão de Pratos</a></li>
+        </ul>
+    </nav>
+    <p id="front"></p>
+    <img src="./restaurante.jpg" alt="">
+
+    <script src="./crud restaurante.js"></script>
+</body>
+
+</html>
