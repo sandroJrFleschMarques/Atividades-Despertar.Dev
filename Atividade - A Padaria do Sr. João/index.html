@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - A Padaria do Sr. João</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <p>Listar Produtos Disponíveis</p>
+                <a onclick="productListByPrice ()">Por Preço</a>
+                <span>/</span>
+                <a onclick="productListByAbc()">Por Ordem Alfabética</a>
+            </li>
+            <li><a onclick="continuar=true,registerNewProduct()">Adicionar Produto</a></li>
+            <li><a onclick="editProduct()">Editar Produto</a></li>
+            <li><a onclick="removeProduct()">Remover Produto</a></li>
+
+            <li><a onclick="stockSum()">Soma do Estoque</a></li>
+            <li><a onclick="continuar2=true,deliveryProduct()">Receber Pedidos</a>
+                <p></p>
+                <a onclick="report()">Relatório de Pedidos por período</a>
+            </li>
+        </ul>
+    </nav>
+    <p id="informations"></p>
+    <img src="./padaria.jpg" alt="">
+
+    <script src="script.js"></script>
+</body>
+
+</html>
