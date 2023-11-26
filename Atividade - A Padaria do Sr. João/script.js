@@ -195,7 +195,6 @@ function stockSum() {
 // Relatório Diarios: João deve poder fazer um relatório das vendas que aconteceram em um período específico que ele selecionar. Deve conter quantas vendas foram realizadas e qual o faturamento.
 function report() {
 	let front = ''
-	let exibir = true
 	let valorPeriodo = 0
 	let pDaVEz = 0
 	let qDaVEz = 0
@@ -204,11 +203,12 @@ function report() {
 	// também pode usar a string diretamente
 	data1 = new Date(`${valor1}T10:00:00`).getTime()
 	data2 = new Date(`${valor2}T10:00:00`).getTime()
-
-	const vendas = delivery.map(elemento => {
+	const vendas = []
+	delivery.forEach(elemento => {
 		for (let chave in elemento) {
 			console.log(elemento[chave].milis, data1, data2);
 			if (elemento[chave].milis > data1 && elemento[chave].milis < data2) {
+				vendas.push(elemento)
 				for (let element of elemento) {
 					for (let key in element) {
 						console.log(key);
@@ -224,12 +224,10 @@ function report() {
 					valorPeriodo += Number(pDaVEz * qDaVEz)
 					console.log(valorPeriodo);
 				}
-			} else if (elemento[chave].milis < data1 || elemento[chave].milis > data2) {
-				front = 'Nenhum resultado'
-				exibir = false
 			}
 		}
 	})
+	console.log(vendas);
 	document.getElementById('informations').innerHTML = `<b>Relatório dos pedidos no período de ${valor1} e ${valor2}:</b><br>${front}`
-	if (exibir) document.getElementById('informations').innerHTML += `<b>Entre ${valor1} e ${valor2} ${vendas.length === 1 ? 'foi efetuada ' + vendas.length + ' venda' : 'foram efetuadas ' + vendas.length + ' vendas'}, valor total do período ${valorPeriodo}<b>`
+	document.getElementById('informations').innerHTML += vendas.length > 0 ? `<b>Entre ${valor1} e ${valor2} ${vendas.length === 1 ? 'foi efetuada ' + vendas.length + ' venda' : 'foram efetuadas ' + vendas.length + ' vendas'}, valor total do período ${valorPeriodo}<b>` : `Nenhum resultado`
 }
