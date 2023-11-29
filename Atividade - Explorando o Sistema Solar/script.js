@@ -27,6 +27,10 @@ getBodies().then((result) => {
     planetasSeparados(corposCelestes)
     ordComplex(corposCelestes)
     planetaOrbitado(corposCelestes)
+    mediaMassaPlanetas(planetas)
+    distanciaSaturnoPlutao(corposCelestes)
+    planetasComLuas(planetas)
+    desafioFinal(corposCelestes)
 }).catch((err) => {
     console.log(err)
 });
@@ -88,89 +92,138 @@ function massaMenores(n) {
     let arr = []
     let soma = 0
     massa.forEach(o => {
-        if (arr.length <= 5) {
+        if (arr.length < 5) {
             arr.push(o)
-            const exponenciacao = Math.pow(o.mass.massValue, o.mass.massExponent)
-            soma+=exponenciacao
-            console.log(o.name, o.mass.massValue, soma);
+            const exponenciacao = o.mass.massValue * Math.pow(10, o.mass.massExponent)
+            soma += exponenciacao
         }
     })
-    console.log(arr, soma);
+    console.log('Soma das 5 menores massas', arr, soma);
 }
-function luasEDensidade(n){
-    let rr = n.forEach(call=> {
-        if(call.moons != null && call.moons.length>2 && call.density>1){
-            console.log('luas e densidade',call.name, call.density);
+function luasEDensidade(n) {
+    let rr = n.forEach(call => {
+        if (call.moons != null && call.moons.length > 2 && call.density > 1) {
+            console.log('luas e densidade', call.name, call.density);
         }
     })
     console.log(rr);
 }
-function descoberta(n){
-    let des = n.map(call =>{
-        if(call.discoveryDate){
+function descoberta(n) {
+    let des = n.map(call => {
+        if (call.discoveryDate) {
             return call
-        } 
+        }
     })
 
     des.sort((a, b) => {
         const dateA = new Date(
-          a.discoveryDate.split("/").reverse().join("-")
+            a.discoveryDate.split("/").reverse().join("-")
         );
         const dateB = new Date(
-          b.discoveryDate.split("/").reverse().join("-")
+            b.discoveryDate.split("/").reverse().join("-")
         );
 
         return dateA - dateB;
-        })
-        for(let indice of des){
-                console.log(indice.name, indice.discoveryDate);
-        }
+    })
+    for (let indice of des) {
+        console.log(indice.name, indice.discoveryDate);
+    }
 }
-function encontrandoAstro (nome){
+function encontrandoAstro(nome) {
     const array = corposCelestes
     const find = array.find(callback => {
-        return callback.name===nome
+        return callback.name === nome
     })
     console.log(`Gravidade do astro ${find.name}: ${find.gravity}, Densidade: ${find.density}, Massa: ${find.mass.massValue}, Distancia: ${find.aphelion}, ${find.perihelion}`)
 }
 
-function filtroGraus(n){
+function filtroGraus(n) {
     const temp = 273.15
-    const filtro = n.filter(call =>{
+    const filtro = n.filter(call => {
         const calculo = call.avgTemp - temp
-        return calculo >=8 && calculo <=30
+        return calculo >= 8 && calculo <= 30
     })
     console.log(filtro)
     //Resultado Deu só a Terra
 }
 let obj = {}
-function planetasSeparados(n){
-const separados = n.map(i=>{
-    if (obj[i.bodyType] === undefined){
-        obj[i.bodyType]=[]
-    }
-    obj[i.bodyType].push(i)
-    
-})
-console.log(obj);
+function planetasSeparados(n) {
+    const separados = n.map(i => {
+        if (obj[i.bodyType] === undefined) {
+            obj[i.bodyType] = []
+        }
+        obj[i.bodyType].push(i)
+
+    })
+    console.log(obj);
 }
 
-function ordComplex(n){
+function ordComplex(n) {
 
-    for(let i in obj){
-    const ordem = obj[i].sort((a,b)=> b.equaRadius - a.equaRadius)
-    const ordemSlice = ordem.slice(0,3)
-    console.log(ordemSlice);
-
-    } 
+    for (let i in obj) {
+        const ordem = obj[i].sort((a, b) => b.equaRadius - a.equaRadius)
+        const ordemSlice = ordem.slice(0, 3)
+        console.log(ordemSlice);
 
     }
-function planetaOrbitado(n){
-    const orbitado = n.filter(call =>{
-        return call.aroundPlanet!=null
+
+}
+function planetaOrbitado(n) {
+    const orbitado = n.filter(call => {
+        return call.aroundPlanet != null
     })
-    orbitado.forEach(call =>{
+    orbitado.forEach(call => {
         console.log(call.name, call.aroundPlanet);
     })
+
+}
+function mediaMassaPlanetas(n) {
+    const planetas = n.filter(call => call.bodyType === 'Planet')
+    const soma = planetas.reduce((acc, currentValue) => {
+        return acc + currentValue.mass.massValue * Math.pow(10, currentValue.mass.massExponent)
+    }, 0)
+
+    const media = soma / planetas.length
+    console.log(media);
+}
+function distanciaSaturnoPlutao(n) {
+    const aphelion = n.find(call => call.id === 'saturne').aphelion
+    const perihelion = n.find(call => call.id === 'pluton').perihelion
+    console.log(perihelion - aphelion);
+}
+function planetasComLuas(n) {
+    n.forEach(call => {
+        if (call.moons != null) console.log(call.name, call.moons.length);
+    })
+}
+function desafioFinal(n) {
+    const arrayPlanetas = n.filter(call => call.isPlanet)
+    // arrayPlanetas.forEach(call => console.log(call.name))
+    console.log(arrayPlanetas);
+    const massas = arrayPlanetas.map(call => call.mass.massValue * Math.pow(10, call.mass.massExponent))
+    // massas.push(1)
+    massas.sort((a, b) => a - b)
+
+    console.log(massas);
+    let indice1 = 0
+    let indice2 = 0
+    let indice = Math.floor(massas.length / 2)
+
+    if (massas.length % 2 === 0) {
+        console.log('par');
+        indice1 = (massas.length / 2) - 1
+        indice2 = massas.length / 2
+        const medianaPar = (massas[indice1] + massas[indice2]) / 2
+        console.log(medianaPar);
+        const nomeDeles = arrayPlanetas.filter(call => call.mass.massValue * Math.pow(10, call.mass.massExponent) >= massas[indice1] && call.mass.massValue * Math.pow(10, call.mass.massExponent) <= massas[indice2])
+        console.log('planetas mais próximos da mediana:', nomeDeles);
+
+    } else {
+        console.log('impar');
+        const medianaImpar = massas[Math.floor(massas.length / 2)]
+        console.log(medianaImpar);
+        const nomeDele = arrayPlanetas.filter(call => call.mass.massValue * Math.pow(10, call.mass.massExponent) === massas[indice])
+        console.log('planeta mais próximo da mediana:', nomeDele);
+    }
 
 }
