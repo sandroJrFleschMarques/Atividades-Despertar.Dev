@@ -116,4 +116,7 @@ a:hover{
         margin: 0;
         overflow: hidden;
     }
+    .footer {
+        display: none;
+    }
 }
