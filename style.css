@@ -53,7 +53,7 @@ a {
 @media only screen and (orientation: portrait) {
     a {
         pointer-events: visible;
-        font-size: 5px;
+        font-size: 10px;
     }
 
     ul {
