@@ -119,11 +119,7 @@ a:hover{
     .footer {
         height: 25vh;
     }
-    #corpo {
-        height: 60vh;
-    }
     #footer {
         font-size: 0.8em;
-        background-color: red;
     }
 }
