@@ -74,49 +74,43 @@ inputs.addEventListener("keydown", function (e) {
 findCharacterByName()
 
 async function localizacoes() {
-  const loc = []
   let i = 1
   try {
     do {
       const site = await axios.get(`https://rickandmortyapi.com/api/location/${i}`)
-      loc.push(site.data.name)
       i++
     } while (`https://rickandmortyapi.com/api/location/${i}`)
   } catch (e) {
     console.log(`Exibindo ${i - 1} páginas encontradas`)
   }
-  document.getElementById('l').innerText = loc.length
+  document.getElementById('l').innerText = i - 1
 }
 localizacoes()
 
 async function episodios() {
-  const epi = []
   let i = 1
   try {
     do {
       const site = await axios.get(`https://rickandmortyapi.com/api/episode/${i}`)
-      epi.push(site.data.name)
       i++
     } while (`https://rickandmortyapi.com/api/episode/${i}`)
   } catch (e) {
     console.log(`Exibindo ${i - 1} páginas encontradas`)
   }
-  document.getElementById('e').innerText = epi.length
+  document.getElementById('e').innerText = i - 1
 }
 episodios()
 
 async function personagens() {
-  const per = []
   let i = 1
   try {
     do {
       const site = await axios.get(`https://rickandmortyapi.com/api/character/${i}`)
-      per.push(site.data.name)
       i++
     } while (`https://rickandmortyapi.com/api/character/${i}`)
   } catch (e) {
     console.log(`Exibindo ${i - 1} páginas encontradas`)
   }
-  document.getElementById('p').innerText = per.length
+  document.getElementById('p').innerText = i - 1
 }
 personagens()
