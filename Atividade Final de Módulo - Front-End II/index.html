@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade Final de Módulo - Front-End II</title>
+</head>
+
+<body>
+    <header>
+        <h1>API de Rick and Morty</h1>
+        <section>
+            <input class="input" type="text" id="pesquisa">
+            <button onclick="findCharacterByName()"><img src="./search.png"
+                    alt="" srcset=""></button>
+        </section>
+
+    </header>
+
+    <main>
+        <div id="corpo">
+        </div>
+    </main>
+
+    <footer>
+        <section>
+            <p>PERSONAGENS <span id="p"></span></p>
+            <p>LOCALIZAÇÕES <span id="l"></span></p>
+            <p>EPISÓDIOS <span id="e"></span></p>
+        </section>
+        <span>
+            Desenvolvido por <a href="https://github.com/sandroJrFleschMarques?tab=repositories">sandroJrFleschMarques</a> em 2023
+        </span>
+
+
+    </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
