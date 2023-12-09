@@ -117,6 +117,9 @@ a:hover{
         overflow: hidden;
     }
     .footer {
-        display: none;
+        height: 20vh;
+    }
+    #corpo {
+        height: 65vh;
     }
 }
