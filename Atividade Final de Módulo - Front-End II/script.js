@@ -13,7 +13,7 @@ async function findCharacterByName() {
   corpo.innerText = ''
   let page = 1
   input = document.getElementById('pesquisa').value
-  document.getElementById('input').innerHTML='<input class="input" type="text" id="pesquisa" disabled>'
+  document.getElementById('input').innerText='Carregando...'
 
   try {
     do {
@@ -57,7 +57,7 @@ async function findCharacterByName() {
 
   } catch /*(error)*/ {
     inputs.value = ''
-    document.getElementById('input').innerHTML='<input class="input" type="text" id="pesquisa">'
+    document.getElementById('input').innerHTML='<section><input class="input" type="text" id="pesquisa"></section><section><button onclick="findCharacterByName()"><img src="./search.png" alt="" srcset=""></button></section>'
     console.log(`Exibindo ${page - 1} páginas encontradas`)
     if (front == '') corpo.innerText = (`${input} Não Encontrado!`)
 
