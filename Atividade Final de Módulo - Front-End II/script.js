@@ -15,7 +15,6 @@ async function findCharacterByName() {
   input = document.getElementById('pesquisa').value
   document.getElementById('input').innerHTML='<input class="input" type="text" id="pesquisa" disabled>'
 
-  console.log(document.getElementById('pesquisa'));
   try {
     do {
       const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`);
