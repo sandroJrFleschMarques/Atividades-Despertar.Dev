@@ -1,6 +1,3 @@
-let front = ''
-let input = ''
-
 async function nomeDoEpisodio(last) {
   const site = await axios.get(last)
   const nomedele = site.data.name
@@ -12,7 +9,7 @@ async function findCharacterByName() {
   let corpo = document.querySelector('#corpo')
   corpo.innerText = ''
   let page = 1
-  input = document.getElementById('pesquisa').value
+  let input = document.getElementById('pesquisa').value
   document.getElementById('input').innerText='Carregando...'
 
   try {
