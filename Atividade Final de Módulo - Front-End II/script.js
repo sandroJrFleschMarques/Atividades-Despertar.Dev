@@ -8,7 +8,6 @@ async function nomeDoEpisodio(last) {
 }
 
 async function findCharacterByName() {
-
   let front = ''
   let corpo = document.querySelector('#corpo')
   corpo.innerText = ''
@@ -102,15 +101,19 @@ async function episodios() {
 episodios()
 
 async function personagens() {
-  let i = 1
+  let page = 1
+  let v = 0
   try {
     do {
-      const site = await axios.get(`https://rickandmortyapi.com/api/character/${i}`)
-      i++
-    } while (`https://rickandmortyapi.com/api/character/${i}`)
+      const site = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`)
+      const cont = [...site.data.results]
+      page++
+      v += cont.length
+    } while (`https://rickandmortyapi.com/api/character?page=${page}`)
   } catch (e) {
-    console.log(`Exibindo ${i - 1} páginas encontradas`)
+    console.log(`Exibindo ${page - 1} páginas encontradas`)
   }
-  document.getElementById('p').innerText = i - 1
+  document.getElementById('p').innerText = v
+
 }
 personagens()
