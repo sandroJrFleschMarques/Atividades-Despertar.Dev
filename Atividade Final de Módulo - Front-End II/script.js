@@ -12,12 +12,17 @@ async function findCharacterByName() {
   let corpo = document.querySelector('#corpo')
   corpo.innerText = ''
   let page = 1
+  input = document.getElementById('pesquisa').value
+  document.getElementById('input').innerHTML='<input class="input" type="text" id="pesquisa" disabled>'
 
+  console.log(document.getElementById('pesquisa'));
   try {
     do {
       const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`);
       const array = [...response.data.results]
-      input = document.getElementById('pesquisa').value
+
+
+
 
       for (let elem of array) {
         function zero() {
@@ -56,14 +61,17 @@ async function findCharacterByName() {
 
   } catch /*(error)*/ {
     inputs.value = ''
+    document.getElementById('input').innerHTML='<input class="input" type="text" id="pesquisa">'
     console.log(`Exibindo ${page - 1} páginas encontradas`)
     if (front == '') corpo.innerText = (`${input} Não Encontrado!`)
 
   }
-  corpo.innerHTML += '<div style="text-align:center"><img style="opacity:0.7; width:55vw; height:79vh" src="./rick-and-morty-portal-shoes-white-clothing-zavvi-23.png" alt="img"><div>'
+  document.getElementById('pesquisa').focus()
+  corpo.innerHTML += '<div style="text-align:center"><img style="opacity:0.7; width:70%; height:79vh" src="./rick-and-morty-portal-shoes-white-clothing-zavvi-23.png" alt="img"><div>'
 }
-const inputs = document.getElementById("pesquisa");
-inputs.focus()
+
+const inputs = document.getElementById("input");
+
 inputs.addEventListener("keydown", function (e) {
   if (e.key === 'Enter') {
     findCharacterByName()
