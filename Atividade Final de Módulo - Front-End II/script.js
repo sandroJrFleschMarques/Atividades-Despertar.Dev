@@ -21,9 +21,6 @@ async function findCharacterByName() {
       const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`);
       const array = [...response.data.results]
 
-
-
-
       for (let elem of array) {
         function zero() {
           let ultimo = ''
@@ -89,4 +86,3 @@ async function footer() {
   document.getElementById('e').innerText = episodios.data.info.count
 }
 footer()
-
