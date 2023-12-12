@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuário</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <form class="form-login">
-        <label for="nome">Username:</label>
-        <input name="erro" class="nome errozao" type="text" placeholder="ex: Olavo" value="teste"> <br><br>
-        <label for="email">Email:</label>
-        <input name="erro" class="email errozao " type="email" placeholder="ex: email@email.com" value="teste@teste.com"><br><br>
-        <label for="senha">Password:</label>
-        <input name="erro" class="senha errozao" type="password" placeholder="senha" value="senha1"><br><br>
-
-        <input class='cadastre' type="submit" value="Cadastre-se">
-        <input class='login' type="submit" value="Login">
+        <div>
+            <label for="mail">Email:</label>
+            <input id="mail" type="email" value="SICREDI@SICREDI.COM.BR"><br><br>
+            <label for="pass">Senha:</label>
+            <input id="pass" type="password" value="COOP"><br><br>
+            <input type="submit" value="Logar">
+        </div>
+        <div>
+            <p>não é cadastrado?</p>
+            <button class="telaCadastro">Cadastre-se</button>
+        </div>
     </form>
+
+    <div class="bloco">
+        <div class="modal">
+            <form class="form-cadastro">
+                <label for="nome">Username:</label>
+                <input name="erro" class="nome borda" type="text" value="SICREDI"> <br><br>
+                <label for="email">Email:</label>
+                <input name="erro" class="email borda" type="email" value="SICREDI@SICREDI.COM.BR"><br><br>
+                <label for="senha">Password:</label>
+                <input name="erro" class="senha borda" type="password" value="COOP"><br><br>
+                <input type="submit" value="Cadastrar">
+            </form>
+            <button onclick="sair()" id="sair">X</button>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
