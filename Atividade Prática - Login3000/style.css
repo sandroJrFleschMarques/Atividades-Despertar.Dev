@@ -1,0 +1,49 @@
+.bloco {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 40vw;
+  height: 40vh;
+  background-color: #E5E5E5;
+}
+
+#sair {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: red;
+  color: white;
+}
+
+.borda {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.errozao {
+  border: 3px solid red;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+  height: 50vh;
+  background-color: rgb(228, 228, 143);
+}
