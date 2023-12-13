@@ -43,21 +43,6 @@ telaCadastro.addEventListener('click', (e) =>{
     bloco.style.display='flex'
 })
 
-formLogin.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-
-    const emailInput = email.value
-    const senhaInput = senha.value
-
-       
-        const enviaCadastro = {
-            password: senhaInput,
-            email: emailInput
-        }
-        login(enviaCadastro)
-    }
-)
 
 
 async function enviandoCadastro(cadastroUsuario) {
@@ -74,13 +59,13 @@ async function enviandoCadastro(cadastroUsuario) {
     }
 
 } 
-async function login(cadastroUsuario) {
+async function login(K) {
 
     try {
-        const response = await api.post('/users/login', cadastroUsuario)
+        const response = await api.post('/users/login', K)
 
         if (response.status === 200) {
-            alert('ok')
+            console.log(response);
         }
 
     } catch (error) {
@@ -92,3 +77,19 @@ async function login(cadastroUsuario) {
 function sair(){
     bloco.style.display='none'
 }
+
+formLogin.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+
+    const emailInput = mail.value
+    const senhaInput = pass.value
+
+       
+        const K = {
+            password: senhaInput,
+            email: emailInput
+        }
+        login(K)
+    }
+)
