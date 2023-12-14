@@ -14,6 +14,10 @@ const erro = document.getElementsByName('erro')
 const mail = document.querySelector('#mail')
 const pass = document.querySelector('#pass')
 
+const title = document.getElementById('#titulo')
+const descri = document.getElementById('#descricao')
+const recado = document.getElementById('#novoRecado')
+
 formCadastro.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -63,9 +67,13 @@ async function login(K) {
 
     try {
         const response = await api.post('/users/login', K)
-
+        console.log(K);
         if (response.status === 200) {
+            localStorage.setItem('userId', response.data.userId)
             console.log(response);
+            const direc = confirm('Parabéns vc está logado, deseja cadastrar novos recados?')
+            if (direc) location.href='./novaNota.html'
+            if (!direc) location.href='./listar-recados.html'
         }
 
     } catch (error) {
@@ -93,3 +101,4 @@ formLogin.addEventListener('submit', (e) => {
         login(K)
     }
 )
+
