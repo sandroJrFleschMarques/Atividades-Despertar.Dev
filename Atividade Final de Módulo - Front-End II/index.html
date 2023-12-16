@@ -16,15 +16,21 @@
                 <input class="input" type="text" id="pesquisa">
             </section>
             <section>
-                <button onclick="findCharacterByName()"><img src="./search.png" alt="" srcset=""></button>
+                <button id="btn"><img src="./search.png" alt="" srcset=""></button>
             </section>
         </section>
     </header>
     <main>
         <div id="corpo">
         </div>
+
     </main>
     <footer>
+        <div id="display">
+            <button id="prev">Anterior</button>
+                <p id="show">Página 1</p>
+                <button id="next">Próximo</button>
+        </div>
         <section>
             <p>PERSONAGENS <span id="p"></span></p>
             <p>LOCALIZAÇÕES <span id="l"></span></p>
@@ -35,6 +41,8 @@
                 href="https://github.com/sandroJrFleschMarques?tab=repositories">sandroJrFleschMarques</a> em 2023
         </span>
     </footer>
+
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
