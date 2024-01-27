@@ -1,4 +1,3 @@
-const array2 = []
 let array3 = []
 
 async function nomeDoEpisodio(last) {
@@ -84,7 +83,7 @@ prev.addEventListener('click', () => {
   }
 })
 
-function zero(matriz, tipo) {
+function zero(matriz) {
 
   for (let elem of matriz) {
     let ultimo = ''
@@ -101,13 +100,8 @@ function zero(matriz, tipo) {
     let id = elem.id
     let card = document.createElement('div')
     let img = document.createElement('img')
-    if (tipo == 'inp') {
-      card.setAttribute('onclick', `modal2(${id})`)
-      card.setAttribute('id', id)
-    }
-    if (tipo == 'def') {
-      card.setAttribute('onclick', `modal(${id})`)
-    }
+    card.setAttribute('onclick', `modal2(${id})`)
+    card.setAttribute('id', id)
     card.setAttribute('class', `cardID`)
     card.setAttribute('title', `Clique para mais informações de ${elem.name}`)
     img.classList.add('col-6')
@@ -120,7 +114,6 @@ function zero(matriz, tipo) {
     card.classList.add('m-4')
     corpo.appendChild(card)
     img.setAttribute('src', `https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`)
-    img.setAttribute('style', 'float:left')
     card.appendChild(img)
   }
 }
@@ -134,13 +127,14 @@ async function findInput() {
   try {
     const response = await axios.get(`https://rickandmortyapi.com/api/character/?name=${input}&page=${page}`)
     const t = [...response.data.results]
-    zero(t, 'inp')
+    zero(t)
     document.getElementById('id2').style.backgroundImage = 'url("./FUNDO.jpg")'
     const card = document.querySelectorAll('.card')
 
     card.forEach(call => {
       array3.push(call)
     })
+    console.log('input', array3);
   } catch (e) {
     inputs.value = ''
     if (front == '') {
@@ -155,17 +149,19 @@ async function findInput() {
 
 async function findCharacterByName() {
   let front = ''
+  array3 = []
   corpo.innerText = ''
   try {
     const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`);
     const array = [...response.data.results]
-    zero(array, 'def')
+    zero(array)
 
     const card = document.querySelectorAll('.card')
 
     card.forEach(call => {
-      array2.push(call)
+      array3.push(call)
     })
+    console.log('sem input', array3);
 
   } catch /*(error)*/ {
   }
@@ -218,26 +214,6 @@ async function footer() {
 }
 footer()
 
-function modal(a) {
-
-  const modal = new bootstrap.Modal('#modal')
-  modal.show()
-  const divisao = document.getElementById('gde')
-  divisao.innerHTML = ""
-  const calculo = (a - 1)
-  clone = array2[calculo].cloneNode(true)
-  clone.removeAttribute('onclick')
-  clone.removeAttribute('title')
-  clone.classList.remove('cardID')
-  clone.classList.add('col-12')
-  clone.classList.add('h-100')
-  clone.classList.add('clone')
-  clone.classList.remove('card')
-  clone.classList.remove('m-4')
-  clone.classList.remove('col-lg-4')
-  clone.classList.remove('col-md-4')
-  divisao.appendChild(clone)
-}
 function modal2(a) {
   const modal = new bootstrap.Modal('#modal')
   modal.show()

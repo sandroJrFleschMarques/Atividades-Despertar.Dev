@@ -94,6 +94,7 @@ img {
 
 .clone img {
     border-radius: 10%;
+    border: 1px solid black;
 }
 
 #gde {
