@@ -1,0 +1,167 @@
+html {
+    height: 100%;
+}
+
+body,
+.container {
+    height: 100vh;
+}
+
+.modal-header {
+    background-color: blueviolet;
+}
+
+.cinza {
+    background-color: rgb(36, 34, 36);
+}
+
+.linear {
+    background: linear-gradient(to right, black, rgb(36, 34, 36));
+}
+
+#id1 {
+    border-bottom: 1px solid #09fd29;
+}
+
+#id2 {
+    background-image: url('./FUNDO.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-color: darkgray;
+}
+
+#id3 {
+    height: 20vh;
+    border-top: 1px solid #09fd29
+}
+
+#logo {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    cursor: pointer;
+
+}
+
+button {
+    width: 5vw;
+    height: 4vh;
+    margin: 0;
+}
+
+img {
+    width: 50%;
+    height: 100%;
+}
+
+.card {
+    background-color: rgba(100, 100, 100, 0.2) !important;
+    height: 40vh !important;
+    border-radius: 15px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    border-color: #09fd29 !important;
+}
+
+.cardID:hover {
+    animation: floatAnimation 1.5s linear infinite;
+    cursor: pointer;
+}
+
+.card p,
+.card .st {
+    display: none;
+}
+
+#oi {
+    background-color: rgb(157, 92, 218);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.clone {
+    height: 90vh;
+    background-color: rgb(157, 92, 218);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clone img {
+    border-radius: 10%;
+}
+
+#gde {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #09fd29 !important;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #09fd29, 0 0 20px #055d10, 0 0 30px #09fd29;
+}
+
+@keyframes neon-blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+h1,
+h2 {
+    animation: neon-blink 2.5s linear infinite;
+}
+
+@keyframes floatAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* Altere o valor conforme necessário */
+    }
+}
+
+.input {
+    width: 100%;
+    height: 4vh;
+    margin: 0;
+    border-style: solid;
+    border-radius: 5px 0 0 5px;
+}
+
+button {
+    width: 5vw;
+    height: 4vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#show {
+    width: 75px;
+    height: 19px;
+    text-align: center;
+}

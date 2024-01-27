@@ -6,6 +6,7 @@ const botaoApagar = document.querySelectorAll('.botao-apagar')
 
 card.forEach(call => {
     call.style.backgroundColor = '#dd7108'
+    console.log(call);
 })
 console.log(titulo);
 titulo.forEach(call => {
