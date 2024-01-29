@@ -54,7 +54,6 @@ body,
 
 .card {
     background-color: rgba(100, 100, 100, 0.2) !important;
-    height: 40vh !important;
     border-radius: 15px !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -139,4 +138,10 @@ h2 {
 .inputb {
     border: 1px solid #09fd29;
     border-radius: 10px;
+}
+
+@media (min-width: 992px){
+    .card{
+        height: 40vh !important;
+    }
 }

@@ -106,7 +106,7 @@ function zero(matriz) {
     img.classList.add('col-6')
     img.classList.add('p-0')
     card.classList.add('card')
-    card.classList.add('col-sm-12')
+    card.classList.add('col-sm-6')
     card.classList.add('col-lg-4')
     card.classList.add('col-md-4')
     card.classList.add('row')
@@ -232,6 +232,7 @@ function modal2(a) {
       clone.classList.remove('m-4')
       clone.classList.remove('col-lg-4')
       clone.classList.remove('col-md-4')
+      clone.classList.remove('col-sm-6')
       divisao.appendChild(clone)
     }
   });
