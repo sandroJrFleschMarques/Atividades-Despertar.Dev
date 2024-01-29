@@ -145,3 +145,8 @@ h2 {
         height: 40vh !important;
     }
 }
+@media (max-height: 360px) {
+    .card {
+        height: 100vh !important;
+    }
+}
