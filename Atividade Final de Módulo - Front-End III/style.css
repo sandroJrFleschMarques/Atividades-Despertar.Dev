@@ -140,8 +140,8 @@ h2 {
     border-radius: 10px;
 }
 
-@media (min-width: 992px){
-    .card{
+@media (min-width: 992px) {
+    .card {
         height: 40vh !important;
     }
 }
