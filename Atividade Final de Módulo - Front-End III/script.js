@@ -102,7 +102,6 @@ function zero(matriz) {
     let img = document.createElement('img')
     card.setAttribute('onclick', `modal2(${id})`)
     card.setAttribute('id', id)
-    card.setAttribute('class', `cardID`)
     card.setAttribute('title', `Clique para mais informações de ${elem.name}`)
     img.classList.add('col-6')
     img.classList.add('p-0')
@@ -142,7 +141,7 @@ async function findInput() {
       prev.disabled = true
       next.disabled = true
       document.getElementById('id2').style.backgroundImage = 'none'
-      corpo.innerHTML += '<div style="text-align:center"><img style="opacity:0.7; width:70%; height:79vh" src="./rick-and-morty-portal-shoes-white-clothing-zavvi-23.png" alt="img"><div>'
+      corpo.innerHTML += '<div style="text-align:center"><img style="opacity:0.7; width:70%; height:79vh" src="./ERRO.png" alt="img"><div>'
     }
   }
 }
