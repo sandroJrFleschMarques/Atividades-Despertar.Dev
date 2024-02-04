@@ -14,7 +14,7 @@
     <header class="container-fluid capa-yt d-flex flex-column justify-content-between ">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-lg navbar-dark">
+                <nav class="navbar navbar-expand-md navbar-dark">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="./index.html">
                             <img src="./assets/images/logo-growflix.svg" alt="Logo Growflix" width="120" height="30"
@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-12 text-start">
                 <div class="container">
-                    <div class="row p-5 mobile-pad">
+                    <div class="row">
                         <div class="col-12 pt-5">
                             <p class="text-light fw-bold">
                                 <small>PODCAST</small> <br />
@@ -46,12 +46,7 @@
 
                         <div class="col-12 pb-5">
                             <button type="button" class="btn btn-light fw-bold" onclick="modal('1')">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Assistir
+                                <span class="injectSvg me-1"></span>Assistir
                             </button>
                         </div>
                     </div>
@@ -66,60 +61,36 @@
             <div class="container">
                 <div class="row pb-5" id="growcast">
                     <div class="col-12">
-                        <p class="mb-0"><a class="link" href="#growcast">Growcast [Episódios]
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
-                                    </path>
-                                </svg>
-                            </a>
+                        <p class="mb-0 mt-3">
+                            <a class="link injectSvg" href="#growcast">Growcast [Episódios]</a>
                         </p>
                     </div>
                 </div>
                 <div class="row pb-5" id="webinar">
                     <div class="col-12">
-                        <p class="mb-0"><a class="link" href="#webinar">Webinar em Flutter
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
-                                    </path>
-                                </svg>
-                            </a>
+                        <p class="mb-0">
+                            <a class="link injectSvg" href="#webinar">Webinar em Flutter</a>
                         </p>
                     </div>
                 </div>
                 <div class="row pb-5" id="ux-ui">
                     <div class="col-12">
-                        <p class="mb-0"><a class="link" href="#ux-ui">Jornada UX/UI
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
-                                    </path>
-                                </svg>
-                            </a>
+                        <p class="mb-0">
+                            <a class="link injectSvg" href="#ux-ui">Jornada UX/UI</a>
                         </p>
                     </div>
                 </div>
                 <div class="row pb-5" id="geral">
                     <div class="col-12">
-                        <p class="mb-0"><a class="link" href="#geral">Diversos
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z">
-                                    </path>
-                                </svg>
-                            </a>
+                        <p class="mb-0">
+                            <a class="link injectSvg" href="#geral">Diversos</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="container-fluid text-secondary bg-black ">
+    <footer class="container-fluid text-secondary bg-black">
         <div class="row fs-6">
             <div class="col-12">
                 <div class="container">
@@ -156,14 +127,14 @@
             </div>
         </div>
     </footer>
-    <div id="modal" class="modal vw-100" tabindex="-1">
+    <div id="modal" class="modal" tabindex="-1">
         <div class="modal-dialog p-0 m-0">
             <div class="modal-content">
                 <div class="modal-header vw-100 border border 0" data-bs-theme="dark">
                     <button type="button" onclick="stopVid()" class="btn-close me-1" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div id="inject" class="modal-body ratio ratio-16x9 ">
+                <div id="inject" class="modal-body ratio ratio-16x9">
                 </div>
             </div>
         </div>

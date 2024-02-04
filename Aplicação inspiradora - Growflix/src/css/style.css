@@ -1,50 +1,11 @@
-.esconder {
-    display: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-.pointer {
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .modal-dialog {
     width: 0;
     height: 0;
 }
 
-.modal-body {
-    text-align: center;
-}
-
 .modal-body>iframe {
     width: 100vw;
     height: 100vh;
-}
-
-.cardZ:hover {
-    margin-top: -20px;
-    padding-bottom: 20px;
-    transform: scale(1.3);
-}
-
-.cardZ .esconder {
-    display: block;
-    opacity: 0;
-    height: 0;
-}
-
-.cardZ:hover .classenova {
-    opacity: 1;
-    transition: 0.5s linear;
-}
-
-.infoCard {
-    font-size: 0.9rem;
-    background-color: black;
 }
 
 .link {
@@ -69,42 +30,23 @@ a {
     background-color: black;
 }
 
-@media (min-width:770px) {
-    .titulo-principal {
-        font-size: 5rem !important;
-        font-weight: bold !important;
-    }
+.titulo-principal {
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+}
 
-    .titulo-secundario {
-        font-size: 3.5rem !important;
-        font-weight: bold !important;
-    }
-
-    main {
-        font-size: 1.8rem !important;
-    }
-
-    .capa-yt {
-        height: 100vh !important;
-        background: url('../assets/images/growcast-01.png') center top/cover no-repeat !important;
-    }
+.infoCard {
+    font-size: 0.9rem;
+    background-color: black;
+    display: block;
 }
 
 .capa-yt {
-    height: 50%;
     background: url('../assets/images/growcast-01.png');
 }
 
 .navbar .collapse:not(.show) {
     display: flex;
-}
-
-.mobile-pad {
-    padding: 0 !important;
-}
-
-.mobile-fon {
-    font-size: 2rem !important;
 }
 
 .botao-grande {
@@ -120,7 +62,7 @@ a {
     height: 80vh;
 }
 
-.css120 {
+.css130 {
     min-height: 130vh;
 }
 
@@ -149,4 +91,43 @@ a {
 
 .accordion-button {
     font-size: 1.5rem;
+}
+
+@media (min-width:770px) {
+
+    .titulo-principal {
+        font-size: 5rem !important;
+        font-weight: bold !important;
+    }
+
+    .titulo-secundario {
+        font-size: 3.5rem !important;
+        font-weight: bold !important;
+    }
+
+    main {
+        font-size: 1.8rem !important;
+    }
+
+    .capa-yt {
+        height: 100vh !important;
+        background: url('../assets/images/growcast-01.png') center top/cover no-repeat !important;
+    }
+
+    .esconder {
+        opacity: 0;
+        height: 0;
+    }
+
+    .cardZ:hover .hoverInfo {
+        opacity: 1;
+        transition: 0.5s linear;
+    }
+
+    .cardZ:hover {
+        margin-top: -20px;
+        padding-bottom: 20px;
+        transform: scale(1.3);
+        cursor: pointer;
+    }
 }
