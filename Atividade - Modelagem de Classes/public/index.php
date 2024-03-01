@@ -1,6 +1,6 @@
 <?php
 
-require('../classes.php');
+require('./classes.php');
 echo "<b>Chegou a hora de aplicar o conhecimento adquirido em nosso encontro.
 Lembrando sempre que os exercícios e desafios serão nossos principais
 indicadores sobre o conhecimento de vocês, tanto para ajudá-los como

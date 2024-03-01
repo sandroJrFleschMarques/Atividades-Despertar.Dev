@@ -1,4 +1,4 @@
 <?php
 
-require_once __DIR__ . '/../public/index.php';
-require_once __DIR__ . '/../public/classes.php';
+require('/../public/index.php');
+require('/../public/classes.php');
